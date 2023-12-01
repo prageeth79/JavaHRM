@@ -313,6 +313,17 @@ public class PersonalInfo extends JFrame implements ActionListener {
         sDepartmentId = "";
     }
 
+    public void dataAdd(){
+        db.code = txtEmployeeNo.getText();
+        db.fullName = txtEmployeeFullName.getText();
+        db.nameWithInit = txtEmployeeNameWithInit.getText();
+        db.nic = txtEmployeeNIC.getText();
+        db.gender = cmbEmployeeGender.getSelectedItem().toString();
+        db.designation.load(sDesignationId);
+        db.department.load(sDepartmentId);
+        db.dateOfBirth = txtEmployeeDOFB.getText();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == btnNew){
@@ -320,6 +331,7 @@ public class PersonalInfo extends JFrame implements ActionListener {
             //System.out.println(cmbEmployeeGender.getSelectedItem().toString());
         }
         if(e.getSource() == btnSave){
+            dataAdd();
             if(!db.validate()) {
                 JOptionPane.showMessageDialog(this,"Data validation Fail",
                         "Validator",JOptionPane.WARNING_MESSAGE);
@@ -338,6 +350,7 @@ public class PersonalInfo extends JFrame implements ActionListener {
             }
         }
         if(e.getSource() == btnUpdate){
+            dataAdd();
             if(!db.validate()) {
                 JOptionPane.showMessageDialog(this,"Data validation Fail",
                         "Validator",JOptionPane.WARNING_MESSAGE);
