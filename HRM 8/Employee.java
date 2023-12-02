@@ -28,23 +28,23 @@ public class Employee extends DB{
     }
 
     public boolean matchCode(){
-        return code.matches("/^[0-9]*$/");
+        return code.matches("^[0-9]*$");
     }
 
     public  boolean matchFullName(){
-        return fullName.matches("/^[a-zA-Z ]*$/");
+        return fullName.matches("^[a-zA-Z ]*$");
     }
 
     public  boolean matchNameWithInit(){
-        return fullName.matches("/^[a-zA-Z .]*$/");
+        return fullName.matches("^[a-zA-Z .]*$");
     }
 
     public  boolean matchNic(){
-        return nic.matches("/^\\d{9}[VX]$/") || nic.matches("/^\\d{12}$");
+        return nic.matches("^\\d{9}[VX]$") || nic.matches("^\\d{12}$");
     }
 
     public boolean matchDateOfBirth(){
-        return dateOfBirth.matches("/\\d{4}-\\d{2}-\\d{2}");
+        return dateOfBirth.matches("\\d{4}-\\d{2}-\\d{2}");
     }
 
     public boolean validate(){
