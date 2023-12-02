@@ -208,7 +208,7 @@ public class PersonalInfo extends JFrame implements ActionListener {
             @Override
             public void focusLost(FocusEvent e) {
 
-                if(!db.matchNic(txtEmployeeNIC.getText()))
+                if(!db.matchCode(txtEmployeeNo.getText()))
                 {
                     JOptionPane.showMessageDialog(me,"Invalid Employee Number it must contains only numbers",
                             "Validator",JOptionPane.WARNING_MESSAGE);
@@ -388,7 +388,7 @@ public class PersonalInfo extends JFrame implements ActionListener {
     }
 
     private void setWindow(){
-        this.setTitle("Personal Inforamtion");
+        this.setTitle("Personal Information");
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
