@@ -81,7 +81,7 @@ public class DepartmentInfo extends JFrame implements ActionListener {
             @Override
             public void focusLost(FocusEvent e) {
 
-                if (!db.matchTelNo(txtManagerName.getText())) {
+                if (!db.matchManager(txtManagerName.getText())) {
                     JOptionPane.showMessageDialog(me, "Invalid manager name enter characters space and dot only",
                             "Validator", JOptionPane.WARNING_MESSAGE);
                 }
