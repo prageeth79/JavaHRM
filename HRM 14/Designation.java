@@ -40,7 +40,7 @@ public class Designation extends DB{
         return super.save(sql);
     }
     public boolean update(String code, String designation){
-        String sql = "Update designation SET code = '" + code + "',depName = '" + designation + "', tel = '" + "'where code = '" + code + "'";
+        String sql = "Update designation SET code = '" + code + "',desigName = '" + designation + "'where code = '" + code + "'";
         return super.update(sql);
     }
 
