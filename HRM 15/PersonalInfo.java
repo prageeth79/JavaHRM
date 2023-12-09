@@ -197,7 +197,7 @@ public class PersonalInfo extends JFrame implements ActionListener {
         btnCancel.setIcon(icancel);
     }
 
-    public void addTextBoxForcus(){
+    private void addTextBoxForcus(){
         PersonalInfo me = this;
         txtEmployeeNo.addFocusListener(new FocusListener()
         {
