@@ -9,15 +9,15 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 public class DesignationInfo extends JFrame implements ActionListener {
-    JLabel lblCode, lblDesignation;
-    JTextField txtCode, txtDesignation;
-    Font fntLblFont,fntTxtFont,fntBtnFont;
+    private JLabel lblCode, lblDesignation;
+    private JTextField txtCode, txtDesignation;
+    private Font fntLblFont,fntTxtFont,fntBtnFont;
 
-    JButton btnNew, btnSave, btnUpdate, btnDelete, btnCancel;
-    JTable tblEmployeeDesignation;
-    JScrollPane tblEmpDesigPane;
-    String[] designationFieldNames = {"Code", "Designation"};
-    Designation db = new Designation();
+    private JButton btnNew, btnSave, btnUpdate, btnDelete, btnCancel;
+    private JTable tblEmployeeDesignation;
+    private JScrollPane tblEmpDesigPane;
+    private final String[] designationFieldNames = {"Code", "Designation"};
+    private final Designation db = new Designation();
 
     public DesignationInfo(){
         setWindow();
