@@ -84,7 +84,7 @@ public class Employee extends DB{
         return super.save(sql);
     }
     protected boolean update(String code, String fullName, String nameWithInit, String nic, String DofB, String gender, String desig, String dept){
-        String sql = "Update employee SET fullName = '" + fullName + "',nameWithInit = '" + nameWithInit + "', NIC = '" + nic + "', dofb = '" + DofB + "', Gender = '" + gender + "', Designation = '" + dept +"', Department = '" + desig + "' WHERE code = '" + code + "'";
+        String sql = "Update employee SET fullName = '" + fullName + "',nameWithInit = '" + nameWithInit + "', NIC = '" + nic + "', dofb = '" + DofB + "', Gender = '" + gender + "', Designation = '" + desig +"', Department = '" + dept + "' WHERE code = '" + code + "'";
         return super.update(sql);
     }
 
