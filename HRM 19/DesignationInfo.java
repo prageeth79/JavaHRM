@@ -175,6 +175,7 @@ public class DesignationInfo extends JDialog implements ActionListener {
         btnSave.setEnabled(enable);
         btnUpdate.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
+        txtCode.setEnabled(enable);
     }
 
     private void buttonNewEnable(boolean enable){
@@ -182,12 +183,14 @@ public class DesignationInfo extends JDialog implements ActionListener {
         btnSave.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
         btnUpdate.setEnabled(!enable);
+        txtCode.setEnabled(enable);
     }
 
     private  void buttonUpdateEnable(boolean enable){
         btnSave.setEnabled(!enable);
         btnUpdate.setEnabled(enable);
         btnDelete.setEnabled(enable);
+        txtCode.setEnabled(!enable);
     }
 
     @Override

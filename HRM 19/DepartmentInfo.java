@@ -247,6 +247,7 @@ public class DepartmentInfo extends JDialog implements ActionListener {
         btnSave.setEnabled(enable);
         btnUpdate.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
+        txtDepartmentId.setEnabled(enable);
     }
 
     private void buttonNewEnable(boolean enable){
@@ -254,12 +255,14 @@ public class DepartmentInfo extends JDialog implements ActionListener {
         btnSave.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
         btnUpdate.setEnabled(!enable);
+        txtDepartmentId.setEnabled(enable);
     }
 
     private  void buttonUpdateEnable(boolean enable){
         btnSave.setEnabled(!enable);
         btnUpdate.setEnabled(enable);
         btnDelete.setEnabled(enable);
+        txtDepartmentId.setEnabled(!enable);
     }
 
     @Override

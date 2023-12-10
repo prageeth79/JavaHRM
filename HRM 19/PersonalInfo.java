@@ -465,6 +465,7 @@ public class PersonalInfo extends JFrame implements ActionListener {
         btnSave.setEnabled(enable);
         btnUpdate.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
+        txtEmployeeNo.setEnabled(enable);
     }
 
     private void buttonNewEnable(boolean enable){
@@ -472,12 +473,14 @@ public class PersonalInfo extends JFrame implements ActionListener {
         btnSave.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
         btnUpdate.setEnabled(!enable);
+        txtEmployeeNo.setEnabled(enable);
     }
 
     private  void buttonUpdateEnable(boolean enable){
         btnSave.setEnabled(!enable);
         btnUpdate.setEnabled(enable);
         btnDelete.setEnabled(enable);
+        txtEmployeeNo.setEnabled(!enable);
     }
 
 
