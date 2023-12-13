@@ -40,6 +40,10 @@ public class PersonalInfo extends JFrame implements ActionListener {
         this.adjustTableColumn();
         this.addTextBoxForcus();
         this.addComponents();
+        if(!isAdmin){
+            btnAddDesig.setEnabled(false);
+            btnAddDepart.setEnabled(false);
+        }
         setMenu();
         this.setVisible(true);
 
