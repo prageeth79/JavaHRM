@@ -779,11 +779,11 @@ public class PersonalInfo extends EmploymentInfo implements ActionListener, KeyL
                 if(btnSave.isEnabled()){
                     btnSave.requestFocusInWindow();
                     btnSave.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
-                    cmbStatus.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
+                    cmbStatus.setBorder(null);
                 }else if(btnUpdate.isEnabled()){
                     btnUpdate.requestFocusInWindow();
                     btnUpdate.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
-                    cmbStatus.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
+                    cmbStatus.setBorder(null);
                 }
             }
             if(e.getSource() == btnSave) {
