@@ -105,15 +105,15 @@ public class PersonalInfo extends EmploymentInfo implements ActionListener, KeyL
         lblEmployeeNo.setFont(fntLblFont);
 
         txtEmployeeNo = new JTextField();
-        txtEmployeeNo.setBounds(180, 5, 100, 25);
+        txtEmployeeNo.setBounds(120, 5, 100, 25);
         txtEmployeeNo.setFont(fntTxtFont);
 
         lblEmployeeFullName = new JLabel("Employee Full Name");
-        lblEmployeeFullName.setBounds(300, 5, 250, 25);
+        lblEmployeeFullName.setBounds(230, 5, 250, 25);
         lblEmployeeFullName.setFont(fntLblFont);
 
         txtEmployeeFullName = new JTextField();
-        txtEmployeeFullName.setBounds(480, 5, 250, 25);
+        txtEmployeeFullName.setBounds(400, 5, 400, 25);
         txtEmployeeFullName.setFont(fntTxtFont);
 
         lblEmployeeNameWithInit = new JLabel("Name with Initials");
