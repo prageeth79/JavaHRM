@@ -1,0 +1,8 @@
+1. download xampp server
+2. run it with web and dtabase (apache and MySQL)
+3. open the web browser and navigate to http://localhost/phpmyadmin
+3. create database call hrm
+4. goto import tab of phpmyadmin
+5. import the file hrm.sql
+6. the username is admin and password is admin123 for admin user
+7. the uername is user and password is user123 for user
