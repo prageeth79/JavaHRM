@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class QualificationInfo extends JDialog implements ActionListener {
     private JTextField txtId, txtQualification;
-    private JComboBox cmbType;
+    private JComboBox<String> cmbType;
     private JLabel lblId, lblQualification, lblType;
     private JButton btnNew, btnSave, btnUpdate, btnDelete, btnCancel;
     private JTable tblQualificationTable;
@@ -26,6 +26,7 @@ public class QualificationInfo extends JDialog implements ActionListener {
         buttonNewEnable(true);
         this.owner = owner;
         this.setVisible(true);
+        clearFields();
 
     }
 
@@ -41,7 +42,7 @@ public class QualificationInfo extends JDialog implements ActionListener {
         lblId.setFont(fntLblFont);
 
         txtId = new JTextField();
-        txtId.setBounds(200,10,200,25);
+        txtId.setBounds(200,10,80,25);
         txtId.setFont(fntTxtFont);
         txtId.setEnabled(false);
 
@@ -57,8 +58,8 @@ public class QualificationInfo extends JDialog implements ActionListener {
         lblType.setBounds(10,70, 160,25);
         lblType.setFont(fntLblFont);
 
-        String data1[] = {"IT", "Computer Science", "Management","Arts","Engineering"};
-        cmbType = new JComboBox(data1);
+        String[] data1 = {"IT", "Computer Science", "Management","Arts","Engineering"};
+        cmbType = new JComboBox<String>(data1);
         cmbType.setBounds(200, 70, 200,25);
         cmbType.setFont(fntTxtFont);
 
@@ -104,6 +105,7 @@ public class QualificationInfo extends JDialog implements ActionListener {
         tblQualificationTablePane = new JScrollPane(tblQualificationTable);
         tblQualificationTablePane.setBounds(10, 190, 590, 100);
         tblQualificationTablePane.setVisible(true);
+        buttonNewEnable(true);
     }
 
     public void addComponent(){
@@ -161,6 +163,7 @@ public class QualificationInfo extends JDialog implements ActionListener {
 
     public void clearFields(){
         txtId.setText("");
+        txtId.setEnabled(false);
         txtQualification.setText("");
     }
 
@@ -174,7 +177,7 @@ public class QualificationInfo extends JDialog implements ActionListener {
         btnSave.setEnabled(enable);
         btnUpdate.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
-        txtId.setEnabled(enable);
+        //txtId.setEnabled(enable);
     }
 
     private void buttonNewEnable(boolean enable){
@@ -182,14 +185,14 @@ public class QualificationInfo extends JDialog implements ActionListener {
         btnSave.setEnabled(!enable);
         btnDelete.setEnabled(!enable);
         btnUpdate.setEnabled(!enable);
-        txtId.setEnabled(enable);
+        //txtId.setEnabled(enable);
     }
 
     private  void buttonUpdateEnable(boolean enable){
         btnSave.setEnabled(!enable);
         btnUpdate.setEnabled(enable);
         btnDelete.setEnabled(enable);
-        txtId.setEnabled(!enable);
+        //txtId.setEnabled(!enable);
     }
 
     @Override

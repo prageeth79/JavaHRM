@@ -32,20 +32,25 @@ public class PersonalInfo extends EmployeeSkillInfo implements ActionListener, K
         }catch (Exception e){
 
         }
-        new UserLogin(this);
+
         this.setWindow();
         this.setComponents(db);
         this.gridSelection();
         this.adjustTableColumn();
-        this.addTextBoxForcus();
+
         this.addComponents();
+
+
+
+        this.setVisible(true);
+        new UserLogin(this);
+
         if(!isAdmin){
             btnAddDesig.setEnabled(false);
             btnAddDepart.setEnabled(false);
         }
         setMenu();
         enableComponents(false);
-        btnNew.requestFocusInWindow();
         //tabKeyBindings();
         tblEmployeeDepartment.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(
                 KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "Enter");
@@ -66,7 +71,12 @@ public class PersonalInfo extends EmployeeSkillInfo implements ActionListener, K
         });
         enableSkillComponent(false);
         enableEduQualiComponent(false);
-        this.setVisible(true);
+        updateEmployeeTable();
+        btnNew.requestFocusInWindow();
+        txtEmployeeNo.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
+        this.addTextBoxForcus();
+        txtEmployeeNo.setBorder(BorderFactory.createLineBorder(Color.GRAY,1));
+        //this.setVisible(true);
 
     }
 
@@ -290,6 +300,9 @@ public class PersonalInfo extends EmployeeSkillInfo implements ActionListener, K
     public void updateDepartmentTable(){
         tblEmployeeDepartment.setModel(new DefaultTableModel(db.department.departmentDetailsAll(),departmentFieldNames));
     }
+    public void updateEmployeeTable(){
+        tblEmployee.setModel(new DefaultTableModel(db.employeeDetailsAll(user),employeeFieldNames));
+    }
 
     private void addTextBoxForcus(){
         PersonalInfo me = this;
@@ -306,7 +319,7 @@ public class PersonalInfo extends EmployeeSkillInfo implements ActionListener, K
                 txtEmployeeNo.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
 
                 if(txtEmployeeNo.getText().isEmpty())
-                    txtEmployeeNo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+                    if(btnSave.isEnabled() || btnUpdate.isEnabled()) txtEmployeeNo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
                 else if(!db.validator.matchNumber(txtEmployeeNo.getText()))
                     {
                         txtEmployeeNo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
